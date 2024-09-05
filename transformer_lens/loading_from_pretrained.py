@@ -1256,6 +1256,33 @@ def convert_hf_model_config(model_name: str, **kwargs):
             "final_rms": True,
             "use_normalization_before_and_after": True,
         }
+    elif official_model_name.startswith("Vikhrmodels/Vikhr-Gemma-2B-instruct"):
+        # Architecture for Gemma-2 2b and Gemma-2 2b Instruct models
+        cfg_dict = {
+            "d_model": 2304,
+            "d_head": 256,
+            "n_heads": 8,
+            "d_mlp": 9216,
+            "n_layers": 26,
+            "n_ctx": 8192,
+            "eps": 1e-06,
+            "d_vocab": 256000,
+            "act_fn": "gelu_pytorch_tanh",
+            "initializer_range": 0.02,
+            "normalization_type": "RMS",
+            "rotary_base": 10000.0,
+            "positional_embedding_type": "rotary",
+            "use_attn_scale": True,
+            "n_key_value_heads": 4,
+            "window_size": 4096,
+            "use_local_attn": True,
+            "attn_types": ["global", "local"] * 21,  # Alternate global and local attn
+            "attn_scores_soft_cap": 50.0,
+            "output_logits_soft_cap": 30.0,
+            "gated_mlp": True,
+            "final_rms": True,
+            "use_normalization_before_and_after": True,
+        }
     elif official_model_name.startswith("google/gemma-2-9b"):
         # Architecture for Gemma-2 9b and Gemma-2 9b Instruct models
         cfg_dict = {
