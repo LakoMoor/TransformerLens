@@ -225,6 +225,7 @@ OFFICIAL_MODEL_NAMES = [
     "google-t5/t5-base",
     "google-t5/t5-large",
     "ai-forever/mGPT",
+    "Vikhrmodels/Vikhr-Gemma-2B-instruct",
 ]
 """Official model names for models on HuggingFace."""
 
@@ -638,7 +639,7 @@ MODEL_ALIASES = {
     "google/gemma-2-2b": ["gemma-2-2b"],
     "google/gemma-2-9b": ["gemma-2-9b"],
     "google/gemma-2-27b": ["gemma-2-27b"],
-    "google/gemma-2-2b-it": ["gemma-2-2b-it"],
+    "google/gemma-2-2b-it": ["gemma-2-2b-it", "Vikhrmodels/Vikhr-Gemma-2B-instruct"],
     "google/gemma-2-9b-it": ["gemma-2-9b-it"],
     "google/gemma-2-27b-it": ["gemma-2-27b-it"],
     "01-ai/Yi-6B": ["yi-6b", "Yi-6B"],
