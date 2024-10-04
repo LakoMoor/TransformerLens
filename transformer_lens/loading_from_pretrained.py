@@ -155,6 +155,7 @@ OFFICIAL_MODEL_NAMES = [
     "meta-llama/Llama-3.2-3B",
     "meta-llama/Llama-3.2-1B-Instruct",
     "Vikhrmodels/Vikhr-Llama-3.2-1B-Instruct",
+    "Vikhrmodels/Vikhr-Nemo-12B-Instruct-R-21-09-24,
     "meta-llama/Llama-3.2-3B-Instruct",
     "Baidicoot/Othello-GPT-Transformer-Lens",
     "bert-base-cased",
@@ -888,6 +889,26 @@ def convert_hf_model_config(model_name: str, **kwargs):
             "positional_embedding_type": "rotary",
             "rotary_adjacent_pairs": False,
             "rotary_dim": 128,
+            "final_rms": True,
+            "gated_mlp": True,
+        }
+        
+    elif "Vikhr-Nemo-12B-Instruct-R-21-09-24" in official_model_name:
+        cfg_dict = {
+            "d_model": 2048,
+            "d_head": 64,
+            "n_heads": 32,
+            "d_mlp": 8192,
+            "n_layers": 16,
+            "n_ctx": 2048,  # capped due to memory issues
+            "eps": 1e-5,
+            "d_vocab": 128256,
+            "act_fn": "silu",
+            "n_key_value_heads": 8,
+            "normalization_type": "RMS",
+            "positional_embedding_type": "rotary",
+            "rotary_adjacent_pairs": False,
+            "rotary_dim": 64,
             "final_rms": True,
             "gated_mlp": True,
         }
