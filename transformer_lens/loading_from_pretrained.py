@@ -206,6 +206,7 @@ OFFICIAL_MODEL_NAMES = [
     "Qwen/Qwen2-0.5B-Instruct",
     "Qwen/Qwen2-1.5B",
     "Qwen/Qwen2-1.5B-Instruct",
+    "Vikhrmodels/Vikhr-Qwen-2.5-0.5b-Instruct",
     "Qwen/Qwen2-7B",
     "Qwen/Qwen2-7B-Instruct",
     "microsoft/phi-1",
